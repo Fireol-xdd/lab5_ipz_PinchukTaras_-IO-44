@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class Computer implements ComputerPart {
 
-    // Список дочірніх компонентів (Composite pattern)
     private List<ComputerPart> parts = new ArrayList<>();
 
     public void addPart(ComputerPart part) {
@@ -24,12 +23,8 @@ public class Computer implements ComputerPart {
 
     @Override
     public void accept(ComputerPartVisitor visitor) {
-        // 1. Спочатку відвідувач обробляє сам контейнер (Computer)
-        visitor.visit(this);
 
-        // 2. Потім контейнер просить кожного свого дочірнього
-        //    елемента "прийняти" того ж самого відвідувача.
-        // Це забезпечує рекурсивний обхід дерева.
+        visitor.visit(this);
         for (ComputerPart part : parts) {
             part.accept(visitor);
         }

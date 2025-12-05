@@ -7,7 +7,7 @@ package work5.task1;
  */
 public class DisplayVisitor implements ComputerPartVisitor {
 
-    private String indent = ""; // Для ілюстрації ієрархії
+    private String indent = "";
 
     @Override
     public void visit(Processor processor) {
@@ -28,23 +28,10 @@ public class DisplayVisitor implements ComputerPartVisitor {
     public void visit(Computer computer) {
         System.out.println(indent + "Відображення [Computer: Контейнер] {");
 
-        // Логіка, пов'язана з функціонуванням шаблону (обхід ієрархії)
+
         String oldIndent = indent;
-        indent += "  "; // Збільшуємо відступ для дочірніх елементів
 
-        // (Рекурсивний обхід відбувається у Computer.accept(),
-        // цей візит лише готує стан для дочірніх елементів)
-
-        // Логіка для "закриття" контейнера (потрібно думати, як це зробити)
-        // У нашій реалізації Computer.accept() сам обходить дітей,
-        // тому ми не можемо тут "закрити" дужку.
-        // Для простоти заглушки, ми просто показуємо вхід у контейнер.
-        // Для коректного відображення ієрархії,
-        // логіка обходу має бути у самому відвідувачі,
-        // а Computer.accept() має надавати доступ до дітей.
-
-        // Відкотимо відступ назад (хоча у цій реалізації це не спрацює ідеально)
         indent = oldIndent;
-        // System.out.println(indent + "}"); // Не можемо зробити це тут
+
     }
 }
