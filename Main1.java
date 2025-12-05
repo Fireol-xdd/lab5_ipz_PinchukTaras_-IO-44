@@ -32,7 +32,7 @@ public class Main1 {
 
 
         double totalPower = powerVisitor.getTotalPower();
-        System.out.println("Результат (із заглушки): " + totalPower);
+        System.out.println("Результат : " + totalPower);
 
 
         System.out.println("\n--- 3. Додавання нового метода (Visitor 2: Display) ---");
