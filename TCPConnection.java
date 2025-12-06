@@ -6,12 +6,12 @@ package work5.task2;
 public class TCPConnection {
     private ConnectionState state;
 
-    // прийняття поточного стану
+  
     public TCPConnection(ConnectionState initialState) {
         this.state = initialState;
     }
 
-    // Метод для зміни стану
+
     public void setState(ConnectionState newState) {
         System.out.println(">>> Зміна стану: "
                 + state.getClass().getSimpleName()
@@ -19,7 +19,7 @@ public class TCPConnection {
         this.state = newState;
     }
 
-    // ді\ потчоного стану
+
     public void open() {
         state.open(this);
     }

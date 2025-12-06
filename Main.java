@@ -3,7 +3,7 @@ package work5.task2;
 public class Main {
     public static void main(String[] args) {
         System.out.println("--- 1. Створення TCP-з'єднання у LISTENING ---");
-        // Задаєм о початковий стан
+
         TCPConnection connection = new TCPConnection(new ListeningState());
 
         System.out.println("\n--- Спроба надсилання даних у LISTENING ---");
@@ -11,7 +11,7 @@ public class Main {
         connection.receive();
 
         System.out.println("\n--- 2. Перехід в ESTABLISHED---");
-        // У стані LISTENING метод open() імітує прийняття клієнта
+
         connection.open();
 
         System.out.println("\n--- Робота в стані ESTABLISHED ---");
